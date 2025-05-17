@@ -89,7 +89,7 @@ Các thuật toán tìm kiếm có thông tin bao gồm:
 
 ### Biểu đồ Hiệu suất
 
-![Biểu đồ Tìm kiếm Có Thông Tin](assets/informed.png)
+![Biểu đồ Tìm kiếm Có Thông Tin](assets/Informed.png)
 
 ### Nhận xét
 
