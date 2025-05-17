@@ -75,8 +75,8 @@ Informed Search là nhóm thuật toán tìm kiếm sử dụng thông tin bổ 
 Các thuật toán tìm kiếm có thông tin bao gồm:
 
 - A* (A Star Search): A* là thuật toán tìm kiếm rất phổ biến và mạnh mẽ trong tìm kiếm có thông tin. A* sử dụng một hàm đánh giá f(n) = g(n) + h(n) để quyết định mở rộng trạng thái nào tiếp theo. Trong đó:
-+ g(n) là chi phí từ trạng thái bắt đầu đến trạng thái hiện tại.
-+ h(n) là hàm heuristic, ước tính chi phí từ trạng thái hiện tại đến mục tiêu.
+ g(n) là chi phí từ trạng thái bắt đầu đến trạng thái hiện tại.
+ h(n) là hàm heuristic, ước tính chi phí từ trạng thái hiện tại đến mục tiêu.
 - IDA* (Iterative Deepening A*): kết hợp giữa ưu điểm của A* và IDS (Iterative Deepening Search). Thay vì lưu trữ tất cả các trạng thái như A*, IDA* sử dụng một mức độ sâu tối đa để tìm kiếm, lặp lại quá trình tìm kiếm với mức độ sâu tăng dần cho đến khi tìm được giải pháp.
 - Greedy Search là thuật toán tìm kiếm chỉ sử dụng hàm heuristic h(n) để đánh giá trạng thái tiếp theo cần mở rộng. Greedy không quan tâm đến chi phí đã đi qua (g(n)), chỉ quan tâm đến chi phí ước tính từ trạng thái hiện tại đến mục tiêu.
 ### Hình ảnh Trực quan
