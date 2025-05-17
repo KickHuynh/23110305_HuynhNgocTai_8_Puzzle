@@ -39,12 +39,12 @@ Dự án này áp dụng các thuật toán tìm kiếm và tối ưu trong trí
 # 2. Nội dung
 ## 2.1. Tìm kiếm không có thông tin (Uninformed Search)
 ### 
-- Tìm kiếm không có thông tin (Uninformed Search) bao gồm các thuật toán tìm kiếm không sử dụng bất kỳ thông tin bổ sung nào ngoài các trạng thái hiện tại. Các thuật toán trong nhóm này bao gồm:
+ Tìm kiếm không có thông tin (Uninformed Search) bao gồm các thuật toán tìm kiếm không sử dụng bất kỳ thông tin bổ sung nào ngoài các trạng thái hiện tại. Các thuật toán trong nhóm này bao gồm:
 + BFS (Breadth-First Search): Tìm kiếm theo chiều rộng, mở rộng tất cả các nút ở một độ sâu nhất định trước khi chuyển sang độ sâu tiếp theo.
 + DFS (Depth-First Search): Tìm kiếm theo chiều sâu, mở rộng các nút từ điểm bắt đầu đi sâu vào mỗi nhánh trước khi quay lại.
 + UCS (Uniform Cost Search): Tìm kiếm theo chi phí đồng nhất, ưu tiên mở rộng các nút có chi phí thấp nhất.
 + IDS (Iterative Deepening Search): Tìm kiếm chiều sâu lặp lại, kết hợp giữa tìm kiếm theo chiều sâu và tìm kiếm theo chiều rộng.
-- Các thuật toán này không yêu cầu thông tin bổ sung về trạng thái mục tiêu và chỉ dựa vào các đặc điểm của trạng thái hiện tại để quyết định bước đi tiếp theo..
+ Các thuật toán này không yêu cầu thông tin bổ sung về trạng thái mục tiêu và chỉ dựa vào các đặc điểm của trạng thái hiện tại để quyết định bước đi tiếp theo..
 
 ### Hình ảnh Trực quan
 
