@@ -123,7 +123,7 @@ Tìm kiếm Cục Bộ là nhóm các thuật toán tìm kiếm tập trung vào
 
 ### Biểu đồ Hiệu suất
 
-![Biểu đồ Tìm kiếm Cục Bộ](assets/local.png)
+![Biểu đồ Tìm kiếm Cục Bộ](assets/Local.png)
 
 ### Nhận xét
 
