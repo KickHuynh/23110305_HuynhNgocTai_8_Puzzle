@@ -17,7 +17,6 @@ def get_neighbors(state):
         if 0 <= new_row < rows and 0 <= new_col < cols:
             new_state = [list(row) for row in state]
             new_state[empty_row][empty_col], new_state[new_row][new_col] = new_state[new_row][new_col], new_state[empty_row][empty_col]
-            # Đảm bảo trả về tuple 3x3
             neighbors.append(tuple(tuple(row) for row in new_state))
 
     return neighbors
