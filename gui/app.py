@@ -17,7 +17,6 @@ from algorithms.simulated_annealing import simulated_annealing
 from algorithms.beam_search import beam_search
 from algorithms.and_or_search import and_or_search # Assuming this is the module
 from algorithms.genetic_algorithm import genetic_algorithm
-# Import GOAL_STATE and and_or_search_path from belief_runner
 from gui.belief_runner import test_beliefs, GOAL_STATE as BELIEF_MODE_GOAL_STATE, and_or_search_path
 from algorithms.belief_state_search import belief_state_search
 from algorithms.partially_observable_search import partially_observable_search
@@ -25,20 +24,17 @@ from algorithms.q_learning import q_learning_train, q_learning_solve
 from algorithms.backtracking import forward_checking_search, is_solvable
 
 
-# Thay đổi trạng thái đầu vào thành trạng thái có thể giải được
 INITIAL_STATE = ((1, 2, 3),
                 (5, 0, 6),
                 (4, 7, 8))
 
-# Các trạng thái niềm tin (CHỈ CÒN 2)
 BELIEF_STATES = [
     ((1, 2, 3), (4, 5, 6), (0, 7, 8)), # Belief State 1
-    # ((1, 2, 3), (4, 5, 6), (7, 0, 8)), # Middle one removed
+    # ((1, 2, 3), (4, 5, 6), (7, 0, 8)), 
     ((1, 2, 3), (4, 0, 6), (7, 5, 8)), # Belief State 2 (was 3)
 ]
 NUM_BELIEF_DISPLAYS = len(BELIEF_STATES) # Should be 2
 
-# Goal state for normal mode (can be same as BELIEF_MODE_GOAL_STATE if desired)
 NORMAL_MODE_GOAL_STATE = (
     (1, 2, 3),
     (4, 5, 6),
@@ -260,21 +256,17 @@ class PuzzleApp:
             self.belief_init_frames.append(board_frame)
         
 
-        # Container for goal state and current belief states (bottom row)
-        # This will be a 2-column layout: Goal on left, Current Beliefs on right
         bottom_belief_area_frame = ttk.Frame(self.belief_board_frame)
         bottom_belief_area_frame.pack(pady=10, fill=tk.X, expand=True)
         bottom_belief_area_frame.columnconfigure(0, weight=1) # Goal State
         bottom_belief_area_frame.columnconfigure(1, weight=1) # Current Belief States (which has 2 sub-frames)
 
-        # Goal state (bottom left)
         goal_frame_belief = ttk.Frame(bottom_belief_area_frame)
         goal_frame_belief.grid(row=0, column=0, padx=10, pady=5, sticky='n')
         ttk.Label(goal_frame_belief, text='Goal State', style='Title.TLabel').pack(pady=5)
         self.belief_goal_frame = ttk.Frame(goal_frame_belief)
         self.belief_goal_frame.pack()
 
-        # Current belief states (bottom right, containing 2 boards)
         current_belief_outer_frame = ttk.Frame(bottom_belief_area_frame)
         current_belief_outer_frame.grid(row=0, column=1, padx=10, pady=5, sticky='n')
         ttk.Label(current_belief_outer_frame, text='Current Belief States', style='Title.TLabel').pack(pady=5)
@@ -282,22 +274,18 @@ class PuzzleApp:
         self.belief_step_label.pack()
 
         self.belief_current_frames = []
-        # This container will hold the 2 current belief state frames side-by-side
         current_belief_display_container = ttk.Frame(current_belief_outer_frame)
         current_belief_display_container.pack() # Will use grid for its children
 
         for i in range(NUM_BELIEF_DISPLAYS): # Loop for 2 belief states
             frame = ttk.Frame(current_belief_display_container)
-            # Place them side-by-side
             frame.grid(row=0, column=i, padx=10, pady=5, sticky='n')
             current_belief_display_container.columnconfigure(i, weight=1)
 
-            # No individual "Current State i+1" label needed if parent has "Current Belief States"
             board_frame = ttk.Frame(frame)
             board_frame.pack()
             self.belief_current_frames.append(board_frame)
 
-        # Initially hide one of the frames based on mode
         self.on_mode_change()
 
 
@@ -699,7 +687,6 @@ class PuzzleApp:
             self.normal_board_frame.grid_remove() # Hide normal frame
             self.belief_board_frame.grid() # Show belief frame
 
-            # Update Initial Belief States display (now 2)
             for i in range(NUM_BELIEF_DISPLAYS):
                 if i < len(BELIEF_STATES) and i < len(self.belief_init_frames):
                     self.draw_static_board(self.belief_init_frames[i], BELIEF_STATES[i])
